@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProfileEditor-2472012</title>
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, sans-serif;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        input{
+            padding-bottom: 1px;
+            margin-bottom: 10px;
+        }
+        
+        button{
+            width: 270px;
+            margin-bottom: 10px;
+            background-color: green;
+            color: white;
+        }
+
+        img{
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+    <h1>Profile Card Editor</h1>
+    <p id="pp">Profile Picture</p>
+    <img src="" id="img">
+    <h2 id="name">John Doe</h2>
+    <p id="data">Web Developer</p><br>
+
+    <input type=text  id="nama" placeholder="Enter New Name"  size="35"><br>
+    <input type=text  id="bio" placeholder="Enter New Bio"  size="35"><br>
+    <input type=text  id="foto" placeholder="Enter Image Url"  size="35"><br>
+
+    <button onclick="update()">Update Profile</button><br>
+    <button onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+            let pp = document.getElementById("pp");
+            let name = document.getElementById("name");
+            let data = document.getElementById("data");
+        function update(){
+            let nama = document.getElementById("nama").value;
+            let bio = document.getElementById("bio").value;
+            let foto = document.getElementById("foto").value;
+            name.innerHTML = nama;  
+            img.style.display = "display";
+            img.src = foto;
+            data.innerHTML = bio;
+        }
+        function reset(){
+            console.log("test")
+            let nama = document.getElementById("nama").value;
+            let bio = document.getElementById("bio").value;
+            let foto = document.getElementById("foto").value;
+            document.getElementById("nama").value = "";
+            document.getElementById("bio").value = "";
+            document.getElementById("foto").value = "";
+            name.innerHTML= "John Doe";
+            foto.innerHTML="Profile Picture";
+            data.innerHTML="Web Developer"
+
+            img.style.display = "none";
+
+        }
+
+    </script>
+</body>
+</html>
