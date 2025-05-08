@@ -4,20 +4,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <title>Suit-2472012</title>
+    <style>
+        body{
+        background-color: tan;
+        }
+        .container{
+            display: grid;
+            grid-template-rows: 1fr ;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "a"
+            "b"
+            "c";
+        }
+        .pemain{
+            grid-template: a;
+            display: flex;
+            justify-content: space-around;
+            height: 20vh;
+        }
+        .player{
+            padding: 10px;
+            color: red;
+            font-weight: bold;
+            font-size: 30px;
+        }   
+        .computer{
+            padding: 10px;
+            color: blue;
+            font-weight: bold;
+            font-size: 30px;
+        }
+        .vs{
+            grid-template: b;
+            display: flex;
+            justify-content: space-evenly;
+            height: 40vh;
+        }
+        .vsnya{
+            padding: 10px;
+            font-size: 70px;
+            display: flex;
+            align-items: center;
+        }
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        .hasil{
+            grid-template: c;
+            margin: auto;
+            font-weight: bold;
+            font-size: 30px;
+            color:firebrick;
+        }
+    </style>
+</head> 
 <body>
-    <p>test</p>
+    <div class="container">
+        <div class="pemain">
+            <div class="player">PLAYER</div>
+            <div class="computer">COMPUTER</div>
+        </div>
+        <div class="vs">
+            <div class="aPlayer"><img src="" class="gambar1"></div>
+            <div class="vsnya">Vs</div>
+            <div class="aComputer"><img src="" class="gambar2"></div>
+        </div>
+        <div class="hasil"></div>
+    </div>
 
     <script>
-        let x = prompt("Selamat Bermain!!! Silahkan Masukkan Angka pilihan(Angka 1-9)");
-        if (x<=1) and (x>=9);{
+        let x = prompt("Selamat Bermain!!! Silahkan Masukkan Angka pilihan(Angka 1-9)")
+        if (x<0 || x>10) {
             let x = alert("Silahkan Masukkan angka (1-9)")
-        }
-        
-        let b = math.ceil(Math.random()*9);
-        document.getElementById("gambar").src = b + ".jpg"
+        }  else {
+            let a = Math.ceil(Math.random()*9);
+            document.querySelector(".gambar1").src = "img/"+x+".jpg";
+            document.querySelector(".gambar2").src = "img/"+a+".jpg";
 
+            if (x > a){
+                menang = "Player Win"
+            } else if (x < a){
+                menang = "Player Lose"
+            } else{
+                menang = "DRAW"
+            }
+            document.querySelector(".hasil").innerHTML = menang;
+        }
     </script>
 </body>
 </html>
